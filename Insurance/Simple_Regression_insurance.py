@@ -5,13 +5,13 @@ from sklearn.metrics import mean_squared_error
 import seaborn as sns
 import matplotlib.pylab as plt
 ################################################
-Data=pd.read_csv('Linear_Regression/Insurance/insurance.csv')
-#print(Data.head())
+Data=pd.read_csv('Insurance/insurance.csv')
+print(Data.head())
 # Get a concise summary of the Data
 #print(Data.info())
 # Check for missing values
 #print(Data.isnull().sum())
-
+"""
 # For binary categorical variables, replace categories with 0 and 1
 Data['sex'] = Data['sex'].map({'female': 0, 'male': 1})
 Data['smoker'] = Data['smoker'].map({'no': 0, 'yes': 1})
@@ -34,15 +34,14 @@ plt.show()
 ####
 import numpy as np
 
-####
-"""
+
 for i in range(X_train.shape[1]):  # Loop over the number of features (columns)
     print(i)
     column_name = X_train.columns[i]  # where 'i' is the column index
     sns.histplot(X_train[column_name], kde=True)
     plt.title(f'Distribution of {column_name}')
     plt.show()
-"""    
+
 #############################
 
 model=LinearRegression()
@@ -60,3 +59,4 @@ plt.scatter(Y_test,y_pred)
 plt.plot([Y_test.min(), Y_test.max()], [Y_test.min(), Y_test.max()], 'k--', lw=2)  # Diagonal line
 plt.show()
 
+"""
