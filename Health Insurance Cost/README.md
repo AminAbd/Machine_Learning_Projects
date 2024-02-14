@@ -2,7 +2,8 @@
 
 ### Objective
 The goal of this project is to predict health insurance costs for individuals based on several input variables.
-
+### Dataset:
+https://www.kaggle.com/datasets/mirichoi0218/insurance?source=post_page-----b056c6d2701e--------------------------------
 ### Inputs
 - Age
 - Sex
