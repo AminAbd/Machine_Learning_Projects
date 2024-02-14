@@ -4,14 +4,11 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 import seaborn as sns
 import matplotlib.pyplot as plt
-
-Data=pd.read_csv('Linear_Regression/Housing/Housing_Data.csv')
-
-print(Data)
-###############
-print(Data.keys())
-################
-
+# Read the Houding Dataset ######
+Data=pd.read_csv('Housing/Housing_Data.csv')
+# Print the Data ###
+#print(Data)
+#print(Data.keys())
 # Split the dataset into features (X) and the target variable (y)
 X = Data.drop('House Price ($)', axis=1)
 y = Data['House Price ($)']
@@ -19,30 +16,12 @@ y = Data['House Price ($)']
 # Split the data into training and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 # Create and train the linear regression model
-
-# Visualizing the distribution of the different features
-for feature in X_train:
-    sns.histplot(X_train[feature], kde=True)
-    plt.title(f'Distribution of {feature}')
-    plt.show()
-
-#############################
-corr_matrix = X_train.corr()
-plt.figure(figsize=(10, 8))
-sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
-plt.title('Correlation Matrix of Features and Target')
-plt.show()
-
-#######################
 model = LinearRegression()
 model.fit(X_train, y_train)
-
 # Make predictions
 y_pred = model.predict(X_test)
-
 # Evaluate the model
 mse = mean_squared_error(y_test, y_pred)
-
 print("Mean Squared Error:", mse)
 
 
