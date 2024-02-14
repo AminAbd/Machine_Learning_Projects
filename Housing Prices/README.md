@@ -14,5 +14,4 @@ The dataset is provided by ChatGPT as a simple example of a linear regression pr
 We used Mean Squared Error (MSE) to measure model performance, aiming for lower values. A scatter plot comparing predicted to actual prices visually assesses accuracy.
 
 
-
 ---
