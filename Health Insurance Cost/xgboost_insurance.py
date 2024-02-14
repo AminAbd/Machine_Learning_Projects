@@ -6,7 +6,7 @@ from xgboost import XGBRegressor
 import matplotlib.pyplot as plt
 
 # Load the data
-data = pd.read_csv('Linear_Regression/Insurance/insurance.csv')
+data = pd.read_csv('Health Insurance Cost/insurance.csv')
 
 # For binary categorical variables, replace categories with 0 and 1
 data['sex'] = data['sex'].map({'female': 0, 'male': 1})
