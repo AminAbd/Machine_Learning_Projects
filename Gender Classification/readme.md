@@ -18,6 +18,8 @@ The goal of this project is to predict an individual's gender based on various f
 ### Models Used
 - **Logistic Regression**: **Accuracy= 96.5%**
   ![image](https://github.com/AminAbd/Machine_Learning_Projects/assets/39317658/0fd9b758-001b-4f8d-895c-858adb5f80b5)
+- **Simple Neural Network**: **Accuracy= 96.4%**
+  ![image](https://github.com/AminAbd/Machine_Learning_Projects/assets/39317658/47907e07-0c12-4f01-ab45-f5216cca9032)
 
 ---
 
