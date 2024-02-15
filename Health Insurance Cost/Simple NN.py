@@ -55,7 +55,7 @@ y_pred_nn = model.predict(X_test_scaled)
 mse_nn = mean_squared_error(Y_test, y_pred_nn)
 print('Mean Squared Error (Neural Network):', mse_nn)
 
-# Plotting the results
+# Plotting the Results
 plt.figure()
 plt.scatter(Y_test, y_pred_nn, label='Neural Network Predictions')
 plt.plot([Y_test.min(), Y_test.max()], [Y_test.min(), Y_test.max()], 'k--', lw=2)  # Diagonal line
