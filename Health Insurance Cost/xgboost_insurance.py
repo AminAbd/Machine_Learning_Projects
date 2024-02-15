@@ -4,7 +4,7 @@ from sklearn.metrics import mean_squared_error
 from xgboost import XGBRegressor
 import matplotlib.pyplot as plt
 
-# Load the data
+# Load the Data
 data = pd.read_csv('Health Insurance Cost/insurance.csv')
 
 # For binary categorical variables, replace categories with 0 and 1
