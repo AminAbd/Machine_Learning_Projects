@@ -20,7 +20,7 @@ scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X_poly )
 ###############################
 X_train,X_test,Y_train,Y_test = train_test_split(X_scaled,Y,test_size=0.2,random_state=0)
-# Initialize the Logistic Regression model
+# Initialize the Logistic Regression Model
 logreg = LogisticRegression(max_iter=1000)
 
 # Fit the model to the training data
