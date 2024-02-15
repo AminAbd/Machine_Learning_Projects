@@ -6,7 +6,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 # Read the Houding Dataset ######
 Data=pd.read_csv('Housing/Housing_Data.csv')
-# Print the Data ###
+# Print the data ###
 #print(Data)
 #print(Data.keys())
 # Split the dataset into features (X) and the target variable (y)
