@@ -42,7 +42,7 @@ X_test_poly_scaled = scaler.transform(X_test_poly)
 model_poly_scaled = LinearRegression()
 model_poly_scaled.fit(X_train_poly_scaled, Y_train)
 
-# Predict and evaluate using the scaled, transformed features
+# Predict and Evaluate using the scaled, transformed features
 y_pred_poly_scaled = model_poly_scaled.predict(X_test_poly_scaled)
 mse_poly_scaled = mean_squared_error(Y_test, y_pred_poly_scaled)
 print('MSE with scaled polynomial features:', mse_poly_scaled)

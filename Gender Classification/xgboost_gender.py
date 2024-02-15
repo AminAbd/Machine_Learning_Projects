@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, confusion_matrix
+from xgboost import XGBClassifier
 import matplotlib.pyplot as plt
 import seaborn as sns
 #  Read the data #######
@@ -12,19 +12,20 @@ Y = Data['gender']  # Replace 'charges' with the name of your target variable
 
 ###############################
 X_train,X_test,Y_train,Y_test = train_test_split(X,Y,test_size=0.2,random_state=0)
-# Initialize the Logistic Regression model
-logreg = LogisticRegression(max_iter=1000)
-# Fit the model to the training data
-logreg.fit(X_train, Y_train)
-# Predict on the test data
-Y_pred = logreg.predict(X_test)
-# Calculate the accuracy
-accuracy = accuracy_score(Y_test, Y_pred)
+# Initialize and train the XGBClassifier model
+model = XGBClassifier(objective='binary:logistic', n_estimators=100, learning_rate=0.1, max_depth=3)
+model.fit(X_train, Y_train)
 
-# Print the accuracy and the classification report
-print(f'Accuracy: {accuracy}')
+# Predict the gender
+y_pred_proba = model.predict_proba(X_test)[:, 1]  # Get probabilities of the positive class
+y_pred_labels = (y_pred_proba > 0.5).astype(int)  # Convert probabilities to 0 or 1 based on a threshold of 0.5
+
+# Calculate the accuracy
+accuracy = accuracy_score(Y_test, y_pred_labels)
+print(f'Accuracy: {accuracy:.4f}')
+
 # Confusion Matrix
-cm = confusion_matrix(Y_test, Y_pred)
+cm = confusion_matrix(Y_test, y_pred_labels)
 
 # Plotting the Confusion Matrix
 plt.figure(figsize=(8, 6))
