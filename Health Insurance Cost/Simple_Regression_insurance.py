@@ -21,7 +21,7 @@ Data['smoker'] = Data['smoker'].map({'no': 0, 'yes': 1})
 Data = pd.get_dummies(Data, columns=['region'], drop_first=True)
 #print(Data.head())
 
-# Define the features and the target variable
+# Define The features and the target variable
 X = Data.drop('charges', axis=1)  # Replace 'charges' with the name of your target variable
 Y = Data['charges']  # Replace 'charges' with the name of your target variable
 
