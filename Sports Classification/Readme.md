@@ -16,10 +16,10 @@ Each image in the dataset, with dimensions of 224x224x3, serves as an input to t
 
 Training Overview:
 
-Optimizer: Adam
-Loss Function: Categorical Crossentropy
-Metrics: Accuracy
-Training and Validation Performance:
+- **Optimizer:** Adam
+- **Loss Function:** Categorical Crossentropy
+- **Metrics:** Accuracy
+
 
 Training and Validation Performance:
  
