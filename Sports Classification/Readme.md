@@ -15,7 +15,7 @@ Each image in the dataset, with dimensions of 224x224x3, serves as an input to t
 #### EfficientNetB0:
 EfficientNet represents a groundbreaking approach in the design of convolutional neural network (CNN) architectures, achieving superior accuracy with minimal computational resources. Developed by Mingxing Tan and Quoc V. Le, EfficientNet's core lies in its innovative compound scaling method, which scales the network dimensions—depth, width, and resolution—harmoniously.
 
-Key Components:
+**Key Components:**
 
 Baseline EfficientNet-B0: The foundation model, EfficientNet-B0, integrates MBConv blocks, known for their efficiency and effectiveness, combining depthwise separable convolutions with squeeze-and-excitation blocks for enhanced feature representation.
 
