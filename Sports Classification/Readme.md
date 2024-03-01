@@ -35,3 +35,10 @@ Training and Validation Performance:
 | 8     | 0.0803 | 97.51%   | 0.1881   | 95.00%       |
 | 9     | 0.0794 | 97.56%   | 0.1924   | 93.60%       |
 | 10    | 0.0771 | 97.81%   | 0.1986   | 93.60%       |
+
+#### Resnet50:
+
+Training Overview:
+- **Optimizer:** Adam
+- **Loss Function:** Categorical Crossentropy
+- **Metrics:** Accuracy
