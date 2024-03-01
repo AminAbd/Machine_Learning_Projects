@@ -8,23 +8,12 @@ https://www.kaggle.com/datasets/gpiosenka/sports-classification
 ### Inputs
 Each image in the dataset, with dimensions of 224x224x3, serves as an input to the classification model. These images cover a broad range of sports, providing diverse visual data for the model to learn from.
 
+### Data Augmentation:
+1- Random Horizontal Flipping
+2- Random Zooming (up to 20%)
 ### Models Used
-**EfficientNetB0:
-Model Training and Implementation
-The model employed for this task is EfficientNetB0, known for its efficiency and effectiveness in handling image classification tasks. The training process is enhanced with data augmentation techniques like random flipping and zooming to improve the model's generalization capabilities.
+#### EfficientNetB0:
 
-Data Augmentation:
-
-Random Horizontal Flipping
-Random Zooming (up to 20%)
-Model Architecture:
-
-Base Model: EfficientNetB0 pre-trained on ImageNet, with the top layer removed.
-Global Average Pooling 2D layer.
-Dense layer with 256 units and ReLU activation.
-Batch Normalization layer.
-Dropout layer with a rate of 0.1.
-Output Dense layer with 100 units (one per sport category) with softmax activation.
 Training Overview:
 
 Optimizer: Adam
