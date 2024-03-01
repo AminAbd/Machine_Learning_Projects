@@ -9,7 +9,7 @@ https://www.kaggle.com/datasets/gpiosenka/sports-classification
 Each image in the dataset, with dimensions of 224x224x3, serves as an input to the classification model. These images cover a broad range of sports, providing diverse visual data for the model to learn from.
 
 ### Models Used
-
+**EfficientNetB0:
 Model Training and Implementation
 The model employed for this task is EfficientNetB0, known for its efficiency and effectiveness in handling image classification tasks. The training process is enhanced with data augmentation techniques like random flipping and zooming to improve the model's generalization capabilities.
 
@@ -32,7 +32,8 @@ Loss Function: Categorical Crossentropy
 Metrics: Accuracy
 Training and Validation Performance:
 
-**EfficientNetB0: 
+Training and Validation Performance:
+ 
 | Epoch | Loss   | Accuracy | Val Loss | Val Accuracy |
 |-------|--------|----------|----------|--------------|
 | 1     | 1.0074 | 75.47%   | 0.2390   | 93.40%       |
