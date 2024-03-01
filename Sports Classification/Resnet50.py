@@ -1,13 +1,14 @@
-import os
+
 import tensorflow as tf
 from tensorflow import keras
 from keras.layers import Dense, GlobalAveragePooling2D
 from keras.models import Sequential
 from keras.applications import ResNet50
-from keras.layers.experimental.preprocessing import RandomFlip, RandomRotation, RandomZoom
+from keras.layers.experimental.preprocessing import RandomFlip, RandomZoom
+
+# Data augmentation
 data_augmentation = tf.keras.Sequential([
     RandomFlip("horizontal"),
-    #RandomRotation(0.2),
     RandomZoom(0.2),
 ])
 
@@ -88,10 +89,10 @@ flops_info = "Estimated FLOPs for ResNet50: 3.8 Billion (for a single forward pa
 combined_text = training_results + "\n" + flops_info
 
 # Define the file path
-file_path = "resnet50_training_performance.txt"
+file_path = "Sports Classification/resnet50_training_performance.txt"
 
-# Writing the results and FLOPs info to a file
+# Writing the results info to a file
 with open(file_path, "w") as file:
     file.write(combined_text)
 
-print(f"Training and validation performance metrics and FLOPs info saved to {file_path}")
+print(f"Training and validation performance metrics saved to {file_path}")

@@ -83,7 +83,7 @@ combined_text = training_results
 # Define the file path
 file_path = "Sports Classification/efficientnetb0_training_performance.txt"
 
-# Writing the results and FLOPs info to a file
+# Writing the results info to a file
 with open(file_path, "w") as file:
     file.write(combined_text)
 
