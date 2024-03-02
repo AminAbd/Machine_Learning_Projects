@@ -83,10 +83,9 @@ training_results = "Epoch, Training Loss, Training Accuracy, Validation Loss, Va
 for epoch in range(len(train_loss)):
     training_results += f"{epoch+1}, {train_loss[epoch]:.4f}, {train_accuracy[epoch]*100:.2f}%, {val_loss[epoch]:.4f}, {val_accuracy[epoch]*100:.2f}%\n"
 
-# Estimated FLOPs for ResNet50
-flops_info = "Estimated FLOPs for ResNet50: 3.8 Billion (for a single forward pass)."
 
-combined_text = training_results + "\n" + flops_info
+
+combined_text = training_results
 
 # Define the file path
 file_path = "Sports Classification/resnet50_training_performance.txt"
