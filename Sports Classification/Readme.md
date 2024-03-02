@@ -7,16 +7,13 @@ The dataset used for this project is sourced from the following Kaggle dataset:
 https://www.kaggle.com/datasets/gpiosenka/sports-classification
 ### Inputs
 Each image in the dataset, with dimensions of 224x224x3, serves as an input to the classification model. These images cover a broad range of sports, providing diverse visual data for the model to learn from.
-
 ### Data Augmentation:
 1- Random Horizontal Flipping
 2- Random Zooming (up to 20%)
 ### Models Used
 #### EfficientNetB0:
 EfficientNet represents a groundbreaking approach in the design of convolutional neural network (CNN) architectures, achieving superior accuracy with minimal computational resources. Developed by Mingxing Tan and Quoc V. Le, EfficientNet's core lies in its innovative compound scaling method, which scales the network dimensions—depth, width, and resolution—harmoniously.
-
 **Key Components:**
-
 Baseline EfficientNet-B0: The foundation model, EfficientNet-B0, integrates MBConv blocks, known for their efficiency and effectiveness, combining depthwise separable convolutions with squeeze-and-excitation blocks for enhanced feature representation.
 
 Compound Scaling: This unique scaling approach applies a compound coefficient (ϕ) to scale depth, width, and resolution uniformly, facilitating the creation of more substantial and more accurate networks without excessive computational load.
@@ -26,7 +23,7 @@ EfficientNet Variants: The EfficientNet family ranges from B1 to B7 models, offe
 Technological Innovations: EfficientNets leverage MBConv blocks, squeeze-and-excitation optimization, and the Swish activation function, contributing to their remarkable efficiency and performance.
 
 EfficientNets have gained widespread adoption across various domains, particularly where computational efficiency is paramount, such as mobile and edge computing. Their scalability and performance have set new benchmarks in the field of deep learning.
-
+---
 Training Overview:
 
 - **Optimizer:** Adam
