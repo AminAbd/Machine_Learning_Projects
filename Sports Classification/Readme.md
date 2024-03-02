@@ -23,6 +23,7 @@ EfficientNet Variants: The EfficientNet family ranges from B1 to B7 models, offe
 Technological Innovations: EfficientNets leverage MBConv blocks, squeeze-and-excitation optimization, and the Swish activation function, contributing to their remarkable efficiency and performance.
 
 EfficientNets have gained widespread adoption across various domains, particularly where computational efficiency is paramount, such as mobile and edge computing. Their scalability and performance have set new benchmarks in the field of deep learning.
+
 ---
 Training Overview:
 
