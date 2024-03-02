@@ -49,6 +49,20 @@ Training and Validation Performance:
 
 #### Resnet50:
 
+**Key aspects of ResNet50 include:**
+
+**Residual Blocks:** These core components help maintain information flow across layers, supporting the training of deep networks.
+
+**Efficiency:** Despite its depth, ResNet50 is computationally efficient due to its bottleneck design, reducing dimensionality within its residual blocks.
+
+**Versatility:** As part of the broader ResNet family, which includes various models like ResNet101 and ResNet152, ResNet50 provides a balanced option, widely applicable across numerous tasks and industries.
+
+**Impact:** ResNet50 has significantly influenced deep learning, offering a robust framework for various applications, from image processing to advanced recognition tasks.
+
+ResNet50 remains a cornerstone in deep learning architectures, celebrated for its depth and efficiency, proving crucial in advancing the field and inspiring future network designs.
+
+
+
 Training Overview:
 - **Optimizer:** Adam
 - **Loss Function:** Categorical Crossentropy
