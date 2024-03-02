@@ -78,13 +78,11 @@ training_results = "Epoch, Training Loss, Training Accuracy, Validation Loss, Va
 for epoch in range(len(train_loss)):
     training_results += f"{epoch+1}, {train_loss[epoch]:.4f}, {train_accuracy[epoch]*100:.2f}%, {val_loss[epoch]:.4f}, {val_accuracy[epoch]*100:.2f}%\n"
 
-combined_text = training_results 
-
 # Define the file path
 file_path = "Sports Classification/efficientnetb0_training_performance.txt"
 
 # Writing the results info to a file
 with open(file_path, "w") as file:
-    file.write(combined_text)
+    file.write(training_results)
 
 print(f"Training and validation performance metrics info saved to {file_path}")
