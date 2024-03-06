@@ -1,10 +1,10 @@
 import os
-import nltk
+import nltk # Natural Language Toolkit
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 # Base Directory
-base_directory_path = 'Sentiment_analysis/aclImdb_v1/aclImdb/train'
+base_directory_path = 'IMDB_Reviews_Sentiment_Classification/aclImdb_v1/aclImdb/train'
 
 # Sub-directories for positive, negative and unsup (non-identified) texts
 sub_directories = ['pos', 'neg', 'unsup']
@@ -40,7 +40,6 @@ for sub_dir in sub_directories:
 for category, text_list in texts.items():
     print(f"{category} texts: {len(text_list)}")
 
-
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -69,48 +68,9 @@ def preprocess_text(text):
 for category in texts:
     texts[category] = [preprocess_text(text) for text in texts[category]]
 #########################
-    import json
+import json
 
 # Save preprocessed texts to a JSON file for later use
-with open('Sentiment_analysis/processed_texts.json', 'w') as outfile:
-    json.dump(texts, outfile)
-
-# Feature Extraction: For machine learning applications, you can convert the preprocessed text into 
-# features using methods like bag-of-words, TF-IDF, or word embeddings
-from sklearn.feature_extraction.text import CountVectorizer
-
-# Example: Creating a bag-of-words model
-vectorizer = CountVectorizer()
-corpus = texts['positive'] + texts['negative']  # Combine or handle categories as needed
-X = vectorizer.fit_transform(corpus)
-# Machine Learning: Use the extracted features to train machine learning models for classification, clustering, or other tasks.
-from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import accuracy_score
-
-# Example: Sentiment analysis with a simple classifier
-# Assuming binary classification with 'positive' and 'negative' texts
-y = [1] * len(texts['positive']) + [0] * len(texts['negative'])
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-
-clf = MultinomialNB()
-clf.fit(X_train, y_train)
-y_pred = clf.predict(X_test)
-
-print(f"Accuracy: {accuracy_score(y_test, y_pred)}")
-from sklearn.metrics import precision_score, recall_score
-
-precision = precision_score(y_test, y_pred)
-recall = recall_score(y_test, y_pred)
-print(f"Precision: {precision}")
-print(f"Recall: {recall}")
-from sklearn.metrics import f1_score
-
-f1 = f1_score(y_test, y_pred)
-print(f"F1 Score: {f1}")
-from sklearn.metrics import confusion_matrix
-
-cm = confusion_matrix(y_test, y_pred)
-print(f"Confusion Matrix:\n{cm}")
-
-    
+with open('IMDB_Reviews_Sentiment_Classification/processed_texts.json', 'w') as outfile:
+    json.dump(texts, outfile)    
+print("Pre-processing is Done.")    
