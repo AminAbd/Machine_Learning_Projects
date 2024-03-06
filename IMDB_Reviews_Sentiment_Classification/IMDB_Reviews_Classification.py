@@ -1,23 +1,29 @@
-import json
+import dill
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 
-# Load preprocessed texts from the JSON file
-with open('IMDB_Reviews_Sentiment_Classification/processed_texts.json', 'r') as infile:
-    texts = json.load(infile)
+# Load preprocessed training texts from the dill file
+with open('IMDB_Reviews_Sentiment_Classification/training_texts.dill', 'rb') as infile:
+    training_texts = dill.load(infile)
 
-# Feature Extraction: Creating a bag-of-words model
+# Load preprocessed testing texts from the dill file
+with open('IMDB_Reviews_Sentiment_Classification/testing_texts.dill', 'rb') as infile:
+    testing_texts = dill.load(infile)
+
+# Feature Extraction: Creating a bag-of-words model using training data
 vectorizer = CountVectorizer()
-corpus = texts['positive'] + texts['negative']  # Combine positive and negative categories
-X = vectorizer.fit_transform(corpus)
+# Combine positive and negative categories from training data
+train_corpus = training_texts['positive'] + training_texts['negative']
+X_train = vectorizer.fit_transform(train_corpus)
+y_train = [1] * len(training_texts['positive']) + [0] * len(training_texts['negative'])
 
-# Labeling: Assuming binary classification with 'positive' = 1 and 'negative' = 0
-y = [1] * len(texts['positive']) + [0] * len(texts['negative'])
-
-# Split the dataset into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+# Transform testing data using the same vectorizer
+# Combine positive and negative categories from testing data
+test_corpus = testing_texts['positive'] + testing_texts['negative']
+X_test = vectorizer.transform(test_corpus)
+y_test = [1] * len(testing_texts['positive']) + [0] * len(testing_texts['negative'])
 
 # Train a Naive Bayes classifier
 clf = MultinomialNB()
